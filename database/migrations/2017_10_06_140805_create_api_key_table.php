@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateApiKeyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('api_keys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email', 100)->unique();
-            $table->string('api_key', 200)->nullable();
-            $table->string('password', 200);
-            $table->rememberToken();
+            $table->string('api_key', 200);
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('api_keys');
     }
 }
