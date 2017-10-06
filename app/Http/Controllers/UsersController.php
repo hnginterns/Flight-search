@@ -130,6 +130,32 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        if ($user) {
+
+            if ($user->delete()) {
+                return response([
+                    'status' => 'success',
+                    'data'   => null,
+                    'message' => 'User deleted successfully'
+                ]);
+            } else {
+                return response([
+                    'status' => 'error',
+                    'data' => null,
+                    'code' => 500,
+                    'message' => 'Update Failed!'
+                ])->setStatusCode(500);
+            }
+        } else {
+          
+          return response([
+                'status' => 'error',
+                'data' => null,
+                'code' => 404,
+                'message' => 'User with ID of ' . $id . 'Not found'
+            ])->setStatusCode(404);
+        }
     }
 }
