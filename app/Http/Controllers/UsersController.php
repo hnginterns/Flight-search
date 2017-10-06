@@ -39,7 +39,24 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+
+        $user->fill($request->all());
+        
+        if ($user->save()) {
+            return response([
+              'status' => 'success',
+              'data' => $user->toArray(),
+              'message' => 'Users was Saved Successfully'
+          ]);
+        } else {
+            return response([
+              'status' => 'error',
+              'data' => null,
+              'code' => 500,
+              'message' => 'User was not saved!'
+          ])->setStatusCode(500);
+        }
     }
 
     /**
