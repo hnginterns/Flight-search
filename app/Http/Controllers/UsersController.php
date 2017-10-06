@@ -88,7 +88,38 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        if ($user) {
+            // Logic to Put or Patch User data
+
+           
+        } else {
+
+            return response([
+                'status' => 'error',
+                'data' => null,
+                'code' => 404,
+                'message' => 'User with ID of ' . $id . 'Not found'
+            ])->setStatusCode(404);
+        }
+
+        if ($user->save()) {
+
+            return response([
+                'status' => 'success',
+                'data'   => $user->toArray(),
+                'message' => 'User updated successfully'
+            ]);
+            
+        } else {
+            return response([
+                'status' => 'error',
+                'data' => null,
+                'code' => 500,
+                'message' => 'Update Failed!'
+            ])->setStatusCode(500);
+        }
     }
 
     /**
