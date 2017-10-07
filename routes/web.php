@@ -44,6 +44,7 @@ Route::group(['prefix' => 'api/v1'], function () use ($router)  {
     
   });
 
+<<<<<<< HEAD
 Route::group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], function() use ($router)
   {
     Route::get('flight',                   'FlightController@index');
@@ -52,3 +53,17 @@ Route::group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], func
   
   
   
+=======
+/*
+ \-----------------------------------------------------------------------------------------------\
+ \ Routes for Trips Controller                                                                   \
+ \------------------------------------------------------------------------------------------------\
+ */
+Route::group(['prefix' => 'trips/api/v1', 'namespace' => 'Api\V1'], function () {
+  Route::post('/one-way', 'TripsController@singleTrip');
+});
+ 
+
+ 
+ 
+>>>>>>> 4bed3f959c8521e3ef4a88d92e87712e46f018db
