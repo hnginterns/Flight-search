@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/autocomplete', function () {
+ return app('App\Http\Controllers\IataCodeAutoCompleteController')->getCityDetails('CBQ');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
