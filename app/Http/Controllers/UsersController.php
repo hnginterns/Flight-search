@@ -175,4 +175,48 @@ class UsersController extends Controller
             ])->setStatusCode(404);
         }
     }
+	
+	
+	/**
+     *user receives token verification for accessing api and updates it in the database table
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function gettoken($id, $remember_token)
+    {
+		 $user = User::find($id);
+
+        if ($user) {
+			
+
+			$user->remember_token = $remember_token;
+           
+        } else {
+
+            return response([
+                'status' => 'error',
+                'data' => null,
+                'code' => 404,
+                'message' => 'User with ID of ' . $id . 'Not found'
+            ])->setStatusCode(404);
+        }
+
+        if ($user->save()) {
+
+            return response([
+                'status' => 'success',
+                'data'   => $user->toArray(),
+                'message' => 'User updated successfully'
+            ]);
+            
+        } else {
+            return response([
+                'status' => 'error',
+                'data' => null,
+                'code' => 500,
+                'message' => 'Update Failed!'
+            ])->setStatusCode(500);
+        }			
+    }
+
 }
