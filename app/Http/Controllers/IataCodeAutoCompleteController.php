@@ -17,6 +17,7 @@ class  IataCodeAutoCompleteController extends Controller
 
           $cityName = $this->getCityNameByCityCode($cityCode);
           $response = $this-> getAirportDetailsByCityName($cityName);
+          return $response;
 
         
 
@@ -102,6 +103,10 @@ class  IataCodeAutoCompleteController extends Controller
       }
 
 
+
+}
+
+
     $object = new IataCodeAutoCompleteController();
 
 //Test Call
@@ -111,10 +116,5 @@ class  IataCodeAutoCompleteController extends Controller
    //TASK 2  Users can recieve airport details from Airport city name
 
     var_dump($object->getAirportDetailsByCityName('Calabar'));
-
-
-
-
-}
 
  
