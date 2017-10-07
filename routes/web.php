@@ -44,16 +44,13 @@ Route::group(['prefix' => 'api/v1'], function () use ($router)  {
     
   });
 
-<<<<<<< HEAD
+
 Route::group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], function() use ($router)
   {
     Route::get('flight',                   'FlightController@index');
     Route::get('flight/{flightId}',         'FlightController@show');
   });
   
-  
-  
-=======
 /*
  \-----------------------------------------------------------------------------------------------\
  \ Routes for Trips Controller                                                                   \
