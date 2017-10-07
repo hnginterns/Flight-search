@@ -49,7 +49,7 @@ Route::group(['prefix' => 'api/v1'], function () use ($router)  {
  \ Routes for Trips Controller                                                                   \
  \------------------------------------------------------------------------------------------------\
  */
-Route::group(['prefix' => 'trips/api/v1', 'namespace' => 'Api\V1'], function () {
+Route::group(['prefix' => 'api/v1/trips', 'namespace' => 'Api\V1'], function () {
   Route::post('/one-way', 'TripsController@singleTrip');
 });
  

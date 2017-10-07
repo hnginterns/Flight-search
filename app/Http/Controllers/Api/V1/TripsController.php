@@ -38,8 +38,8 @@ class TripsController extends Controller{
         "solutions" => $request->solution
         ));
 
-    // $apiKey = env('GOOGLE_API_KEY');
-    $apiKey = 'AIzaSyDzmxuG60PSzQS2DCbJ7AqY1FtevC8H7Sc';
+    $apiKey = env('GOOGLE_API_KEY');
+    // $apiKey = 'AIzaSyDzmxuG60PSzQS2DCbJ7AqY1FtevC8H7Sc';
     $post_data = json_encode($post_data);
     curl_setopt_array($curl, array(
       CURLOPT_URL => "https://www.googleapis.com/qpxExpress/v1/trips/search?key=".$apiKey,
@@ -63,7 +63,7 @@ class TripsController extends Controller{
     if ($err) {
       echo "cURL Error #:" . $err;
     } else {
-      echo $response;
+      return json_decode($response, true);
     }
   }
 
