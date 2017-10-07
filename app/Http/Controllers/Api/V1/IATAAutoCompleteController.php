@@ -82,7 +82,7 @@ class IATAAutoCompleteController extends Controller{
             $result = ['success' => 404];//incase of any error
          }
           
-         $output = json_encode($result);
+         $output = utf8_encode(json_encode($result)) ;
          return  response(['data'=>$output]);
         
 
@@ -90,11 +90,9 @@ class IATAAutoCompleteController extends Controller{
 
     public function getCityDataFromCode($cityCode){
         
-        //$cityName = $this->getCityName($cityCode);
-
-        echo $cityCode;
-
-        // $this->getCityDataFromName($cityName);
+        $cityName = $this->getCityName($cityCode);
+        
+        $this->getCityDataFromName($cityName);
         
         
     }

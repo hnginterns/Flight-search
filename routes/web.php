@@ -38,8 +38,10 @@ Route::get('user/gettoken/{id}/{remember_token}', 'UsersController@gettoken');
 
 
 Route::group(['prefix' => 'api/v1'], function () use ($router)  {
-    Route::post('/tokens',                   'Api\v1\TokenController@index');
-
-    Route::post('/cities',                   'Api\v1\IATAAutoCompleteController@index');
+    Route::post('/tokens',                                      'Api\v1\TokenController@index');
+    Route::post('/cities',                                      'Api\v1\IATAAutoCompleteController@index');
+    Route::post('/search/flights/oneWay',                       'Api\v1\FlightSearchController@oneWay');
+    Route::post('/search/flights/roundTrip',                    'Api\v1\FlightSearchController@roundTrip');
+	  Route::post('/search/flights/currentflightslocations',      'Api\v1\FlightSearchController@findCurrentFlightsLocations');
     
   });
