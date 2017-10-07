@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => '/manage'], function () use ($router)  {
     Route::get('user',                    'Api\v1\UserController@index');
     Route::post('users',                  'Api\v1\UserController@store');
     Route::get('/users/{id}',             'Api\v1\UserController@show');
@@ -25,8 +24,9 @@ Route::group(['prefix' => '/manage'], function () use ($router)  {
   });
 
 
+Route::get('/autocomplete', function () {
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('user/gettoken/{id}/{remember_token}', 'UsersController@gettoken');
