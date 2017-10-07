@@ -17,17 +17,16 @@ class UserController extends Controller{
 	
 	
 	public function store(Request $request){
+
 		$this->validateRequest($request);
 
-		$apikey = str_random(48);
-		$token = str_random(64);
-
+		
 		$user = User::create([
 					'email' => $request->get('email'),
 					'password'=> Hash::make($request->get('password')),
-					'username' => $request->get('username'),
-					'api_key' => $apikey,
-					'remember_token' => $token
+					'name' => $request->get('name'),
+					'api_key' => str_random(32),
+					'remember_token' => str_random(48)
 				]);
 
 
@@ -35,8 +34,17 @@ class UserController extends Controller{
 
 	}
 
-	public function findUserByEmail($email){
-		$user = User::where('email', $email)->first();
+	public function show($id){
+		$user = User::find($id);
+		if(!$user){
+			return response()->json(['status' => '404','message' => 'user does not exist']);
+		}
+		return response()->json(['status' => 200,'user' => $user]);
+	}
+
+	public function findUserByEmail(Request $request){
+		
+		$user = User::where('email', $request->get('email'))->first();
 		if(!empty($user)){
 			return response()->json(['status' => 200,'user' => $user]);
 					 
@@ -50,10 +58,12 @@ class UserController extends Controller{
 
 	public function update(Request $request, $id){
 		$user = User::find($id);
+		
 		if(!$user){
 			return response()->json(['status' => 404,'message' => 'user does not exist']);
 			
 		}
+
 		$this->validateRequest($request);
 		$user->email 		= $request->get('email');
 		$user->password 	= Hash::make($request->get('password'));

@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         factory(App\User::class, 10)->create();
          
         // Enable it back
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        // DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        // // $this->call(UsersTableSeeder::class);
+        // $this->call(Api_keysTableSeeder::class);
     }
 }

@@ -15,12 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::group(['prefix' => '/manage'], function () use ($router)  {
     Route::get('user',                    'Api\v1\UserController@index');
     Route::post('users',                  'Api\v1\UserController@store');
-    Route::get('/users/{userEmail}',      'Api\v1\UserController@findUserByEmail');
-    Route::put('/users/{user_id}',        'Api\v1\UserController@update');
+    Route::get('/users/{id}',             'Api\v1\UserController@show');
+    Route::get('email/users',       'Api\v1\UserController@findUserByEmail');
     Route::delete('/users/{user_id}',     'Api\v1\UserController@destroy');
     
   });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('user/gettoken/{id}/{remember_token}', 'UsersController@gettoken');

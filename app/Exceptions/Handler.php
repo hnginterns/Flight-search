@@ -50,7 +50,7 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException)  {
 
-          return response(['error' => 'Endpoint not found', 'statusCode' => 404])->setStatusCode(404);
+          return response(['message' => 'Endpoint not found', 'statusCode' => 400])->setStatusCode(400);
         }
         return parent::render($request, $exception);
     }

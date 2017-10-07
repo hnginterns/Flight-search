@@ -15,17 +15,16 @@ use Faker\Generator as Faker;
 
 $factory->define(App\User::class, function (Faker $faker) {
    $hasher = app()->make('hash');
-    $apikey = (str_random(48));
-    $token = (str_random(64));
+    $apikey = (str_random(32));
+    $token = (str_random(48));
     
     
     
     return [
         'name' => $faker->name,
         'email' => $faker->email,
-        'username' => $faker->username,
+        'name' => $faker->username,
         'password' => $hasher->make("secret"),
-        'api_key' => $apikey,
         'remember_token' => $token
         
     ];
