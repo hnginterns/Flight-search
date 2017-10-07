@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => '/manage'], function () use ($router)  {
+    Route::get('user',                    'Api\v1\UserController@index');
+    Route::post('users',                  'Api\v1\UserController@store');
+    Route::get('/users/{id}',             'Api\v1\UserController@show');
+    Route::get('email/users',       'Api\v1\UserController@findUserByEmail');
+    Route::delete('/users/{user_id}',     'Api\v1\UserController@destroy');
+    
+  });
+
+
 Route::get('/autocomplete', function () {
  return app('App\Http\Controllers\IataCodeAutoCompleteController')->getCityDetails('CBQ');
 });
