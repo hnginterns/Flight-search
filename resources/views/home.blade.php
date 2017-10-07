@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                     
+                    
+                      <h1 class="text-center">Your Api Key: {{$user_api_key}}</h1>
+                    
                 </div>
             </div>
         </div>
