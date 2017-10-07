@@ -43,3 +43,12 @@ Route::group(['prefix' => 'api/v1'], function () use ($router)  {
     Route::post('/cities',                   'Api\v1\IATAAutoCompleteController@index');
     
   });
+
+Route::group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], function() use ($router)
+  {
+    Route::get('flight',                   'FlightController@index');
+    Route::get('flight/{flightId}',         'FlightController@show');
+  });
+  
+  
+  
