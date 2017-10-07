@@ -43,3 +43,16 @@ Route::group(['prefix' => 'api/v1'], function () use ($router)  {
     Route::post('/cities',                   'Api\v1\IATAAutoCompleteController@index');
     
   });
+
+/*
+ \-----------------------------------------------------------------------------------------------\
+ \ Routes for Trips Controller                                                                   \
+ \------------------------------------------------------------------------------------------------\
+ */
+Route::group(['prefix' => 'trips/api/v1', 'namespace' => 'Api\V1'], function () {
+  Route::post('/one-way', 'TripsController@singleTrip');
+});
+ 
+
+ 
+ 
