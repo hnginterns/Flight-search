@@ -34,32 +34,24 @@ class FlightSearchController extends Controller{
 	
 
     
-    // this code does not do anything significant
-	/* This method is used to find current flight locations, it recieves api_key, checks if it exist,
-	* If it does not exist, a 404 error code is thrown, if it exists, a call is made to iatacodes using php
-	* CURL and the response is sent to the user
-	*
+
+	/*
+	*  This method collects the longitude and latitude of a place and returns the airport city data of the location
 	*/
 	public function findCurrentFlightsLocations(Request $request){
-
-         $apiKey = $request->json()->get('apiKey');
-         $user = User::where('api_key', $apiKey)->first();//check whethr there is a user with the api key
-		 if(empty($user))
-		 {
-			  return response()->json(['status' => '404','data' => 'Api key not valid']);//if no user exist
-		 }
-		 else{
-			 
+			
+			$lat  =  $request->json()->get('lat');
+			$long =  $request->json()->get('long');
 			$ch = curl_init();
        		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        	curl_setopt($ch, CURLOPT_URL, "https://iatacodes.org/api/v7/flights?api_key=9374976f-ba4f-41b5-a99f-edd4339facaf");
+        	curl_setopt($ch, CURLOPT_URL, "https://iatacodes.org/api/v6/nearby?api_key=9374976f-ba4f-41b5-a99f-edd4339facaf&lat=$lat&lng=$long&distance=1000");
         	$result = curl_exec($ch);
         	curl_close($ch);
-			$output = json_decode($result);
+			$output = utf8_encode(json_decode($result));
            
-		  return response()->json(['status' => '200','data' =>  $output->request->response]);//if no user exist
-		 }
+		  return response()->json(['status' => '200','data' =>  $output->response]);
+	
 
       
 

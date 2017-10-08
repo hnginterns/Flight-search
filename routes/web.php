@@ -43,9 +43,7 @@ Route::group(['prefix' => 'api/v1', 'middleware' => ['token_auth']], function ()
     Route::post('/cities',                                      'Api\v1\IATAAutoCompleteController@index');
     Route::post('/search/flights/oneWay',                       'Api\v1\FlightSearchController@oneWay');
     Route::post('/search/flights/roundTrip',                    'Api\v1\FlightSearchController@roundTrip');
-
-    // this route has issues 
-	  Route::post('/search/flights/currentflightslocations',      'Api\v1\FlightSearchController@findCurrentFlightsLocations');
+	Route::post('/search/flights/currentflightslocations',      'Api\v1\FlightSearchController@findCurrentFlightsLocations');
     
   });
 
