@@ -1,0 +1,193 @@
+ {
+                "status": "200",
+                "data": [
+                {
+                    "stops":0,
+                    "trip":{
+                            
+                            "aircraft":{
+                                "code":"767",
+                                "name":"Boeing 737"
+                                },
+                            "departure":{
+                                "cityCode":"LOS",
+                                "cityName":"Lagos",
+                                "airport":"Lagos Murtaka Muhammed International"
+                                },
+                            "arrival":{
+                                "cityCode":"ABV",
+                                "cityName":"Abuja",
+                                "airport":"Abuja Nnamd Azikiwe International"
+                                },
+                            
+                            "booking":{
+                                "id":"GI5njCtlByOCiRu4",
+                                "code":"O",
+                                "codeCount":9
+                                },
+                            "times":{
+                                "departure":"2017-10-04T18:00+01:00",
+                                "arrival":"2017-10-04T19:00+01:00",
+                                "duration":68
+                                },
+                            "pricing":{
+                                "baseFare":"USD100",
+                                "salesFare":"NGN35983",
+                                "salesTax":"NGN19701",
+                                "saleTotal":"NGN55684"
+                                },
+                            "tax":[
+                                    {
+                                        "id":"JY_002",
+                                        "chargeType":"GOVERNMENT",
+                                        "chargeCode":"JY",
+                                        "country":"NG",
+                                        "salePrice":"NGN1799"
+                                    },
+                                    {
+                                        "id":"QT_001",
+                                        "chargeType":"CARRIER_SURCHARGE",
+                                        "chargeCode":"QT",
+                                        "country":"NG",
+                                        "salePrice":"NGN2345"
+                                    }
+                                ],
+                            "carrier":{
+                                "code":"H1",
+                                "name":"Hahn Air System"
+                                },
+                            "cabin":"",
+                            "mileage":"",
+                            "operatingDisclosure":"",
+                            "latestTicketingTime":""
+                            
+                    }
+                },
+                {
+                    "stops":2,
+                    "trip1":{
+                            
+                            "aircraft":{
+                                "code":"767",
+                                "name":"Boeing 737"
+                                },
+                            "departure":{
+                                "cityCode":"LOS",
+                                "cityName":"Lagos",
+                                "airport":"Lagos Murtaka Muhammed International"
+                                },
+                            "arrival":{
+                                "cityCode":"ABV",
+                                "cityName":"Abuja",
+                                "airport":"Abuja Nnamd Azikiwe International"
+                                },
+                            
+                            "booking":{
+                                "id":"GI5njCtlByOCiRu4",
+                                "code":"O",
+                                "codeCount":9
+                                },
+                            "times":{
+                                "departure":"2017-10-04T18:00+01:00",
+                                "arrival":"2017-10-04T19:00+01:00",
+                                "duration":68
+                                },
+                            "pricing":{
+                                "baseFare":"USD100",
+                                "salesFare":"NGN35983",
+                                "salesTax":"NGN19701",
+                                "saleTotal":"NGN55684"
+                                },
+                            "tax":[
+                                    {
+                                        "id":"JY_002",
+                                        "chargeType":"GOVERNMENT",
+                                        "chargeCode":"JY",
+                                        "country":"NG",
+                                        "salePrice":"NGN1799"
+                                    },
+                                    {
+                                        "id":"QT_001",
+                                        "chargeType":"CARRIER_SURCHARGE",
+                                        "chargeCode":"QT",
+                                        "country":"NG",
+                                        "salePrice":"NGN2345"
+                                    }
+                                ],
+                            "carrier":{
+                                "code":"H1",
+                                "name":"Hahn Air System"
+                                },
+                            "cabin":"",
+                            "mileage":"",
+                            "operatingDisclosure":"",
+                            "latestTicketingTime":""
+                            
+                    },
+                    "trip2":{
+                            
+                            "aircraft":{
+                                "code":"767",
+                                "name":"Boeing 737"
+                                },
+                            "departure":{
+                                "cityCode":"LOS",
+                                "cityName":"Lagos",
+                                "airport":"Lagos Murtaka Muhammed International"
+                                },
+                            "arrival":{
+                                "cityCode":"ABV",
+                                "cityName":"Abuja",
+                                "airport":"Abuja Nnamd Azikiwe International"
+                                },
+                            
+                            "booking":{
+                                "id":"GI5njCtlByOCiRu4",
+                                "code":"O",
+                                "codeCount":9
+                                },
+                            "times":{
+                                "departure":"2017-10-04T18:00+01:00",
+                                "arrival":"2017-10-04T19:00+01:00",
+                                "duration":68
+                                },
+                            "pricing":{
+                                "baseFare":"USD100",
+                                "salesFare":"NGN35983",
+                                "salesTax":"NGN19701",
+                                "saleTotal":"NGN55684"
+                                },
+                            "tax":[
+                                    {
+                                        "id":"JY_002",
+                                        "chargeType":"GOVERNMENT",
+                                        "chargeCode":"JY",
+                                        "country":"NG",
+                                        "salePrice":"NGN1799"
+                                    },
+                                    {
+                                        "id":"QT_001",
+                                        "chargeType":"CARRIER_SURCHARGE",
+                                        "chargeCde":"QT",
+                                        "country":"NG",
+                                        "salePrice":"NGN2345"
+                                    }
+                                ],
+                            "carrier":{
+                                "code":"H1",
+                                "name":"Hahn Air System"
+                                },
+                            "cabin":"",
+                            "mileage":"",
+                            "operatingDisclosure":"",
+                            "latestTicketingTime":""
+                            
+                    }
+                    
+                }
+                
+                
+                    
+                    
+                ]
+            }
