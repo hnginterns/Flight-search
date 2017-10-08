@@ -13,7 +13,7 @@ class CreateFlightHistoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('flight_history', function (Blueprint $table) {
+        Schema::create('flight_histories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('location');
@@ -32,6 +32,6 @@ class CreateFlightHistoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('flight_history');
+        Schema::dropIfExists('flight_histories');
     }
 }
