@@ -62,6 +62,6 @@ Route::group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], func
  \ Routes for Trips Controller                                                                   \
  \------------------------------------------------------------------------------------------------\
  */
-Route::group(['prefix' => 'api/v1/trips', 'namespace' => 'Api\V1'], function () {
-  Route::post('trips/oneWay', 'TripsController@singleTrip');
+Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function () {
+  Route::post('/trips/oneWay', 'TripsController@singleTrip');
 });
