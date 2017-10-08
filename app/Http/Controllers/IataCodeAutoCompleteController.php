@@ -185,7 +185,7 @@ class  IataCodeAutoCompleteController extends Controller
      </pre>';
    //TASK 2  Users can recieve airport details from Airport city name
     echo '//TASK 2  Users can recieve airport details from Airport city name, Test data UYo </br>';
-    var_dump($object->getAirportDetailsByCityName('New york'));
+    var_dump($object->getAirportDetailsByCityName('UYO'));
      echo'<pre>
 
 
