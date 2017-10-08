@@ -116,6 +116,11 @@ class IATAAutoCompleteController extends Controller{
          return  $output->response[0]->name;// returns city name
      }
 
-
+     public function success($data, $code){
+        return response()->json(['data' => $data], $code);
+    }
+    public function error($message, $code){
+        return response()->json(['message' => $message], $code);
+    }
 
 }

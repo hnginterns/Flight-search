@@ -24,16 +24,17 @@ Route::group(['prefix' => '/manage'], function () use ($router)  {
     
   });
 
-
-Route::get('/autocomplete', function () {
- return app('App\Http\Controllers\IataCodeAutoCompleteController')->getCityDetails('CBQ');
-});
+// implementation changed to api/v1/cities
+// Route::get('/autocomplete', function () {
+//  return app('App\Http\Controllers\IataCodeAutoCompleteController')->getCityDetails('CBQ');
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('user/gettoken/{id}/{remember_token}', 'UsersController@gettoken');
+// implementation changed to api/v1/tokens
+//Route::get('user/gettoken/{id}/{remember_token}', 'UsersController@gettoken');
 
 
 
@@ -42,9 +43,12 @@ Route::group(['prefix' => 'api/v1'], function () use ($router)  {
     Route::post('/cities',                                      'Api\v1\IATAAutoCompleteController@index');
     Route::post('/search/flights/oneWay',                       'Api\v1\FlightSearchController@oneWay');
     Route::post('/search/flights/roundTrip',                    'Api\v1\FlightSearchController@roundTrip');
+
+    // this route has issues 
 	  Route::post('/search/flights/currentflightslocations',      'Api\v1\FlightSearchController@findCurrentFlightsLocations');
     
   });
+
 
 
 Route::group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], function() use ($router)
@@ -58,11 +62,10 @@ Route::group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], func
  \ Routes for Trips Controller                                                                   \
  \------------------------------------------------------------------------------------------------\
  */
-Route::group(['prefix' => 'trips/api/v1', 'namespace' => 'Api\V1'], function () {
-  Route::post('/one-way', 'TripsController@singleTrip');
+Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function () {
+  Route::post('/trips/oneWay', 'TripsController@singleTrip');
 });
  
 
  
  
->>>>>>> 4bed3f959c8521e3ef4a88d92e87712e46f018db

@@ -23,7 +23,7 @@ class FlightSearchController extends Controller{
         $this->showDummySearch();
 
     }
-    public function showDummySearch(Request $request){
+    public function showDummySearch(){
         
         $path = storage_path() . "/dummy.json"; 
         $json = json_decode(file_get_contents($path), true);
