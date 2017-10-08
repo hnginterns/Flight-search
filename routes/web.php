@@ -38,7 +38,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::group(['prefix' => 'api/v1'], function () use ($router)  {
+Route::group(['prefix' => 'api/v1', 'middleware' => ['token_auth']], function () use ($router)  {
     Route::post('/tokens',                                      'Api\v1\TokenController@index');
     Route::post('/cities',                                      'Api\v1\IATAAutoCompleteController@index');
     Route::post('/search/flights/oneWay',                       'Api\v1\FlightSearchController@oneWay');
