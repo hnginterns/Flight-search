@@ -40,8 +40,8 @@ class FlightSearchController extends Controller{
 	*/
 	public function findCurrentFlightsLocations(Request $request){
 			
-			$lat  =  $request->json()->get('lat');
-			$long =  $request->json()->get('long');
+			$lat  =  $request->json()->post('lat');
+			$long =  $request->json()->post('long');
 			$ch = curl_init();
        		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
